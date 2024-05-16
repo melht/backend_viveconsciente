@@ -6,6 +6,7 @@ const UsuarioSchema = new mongoose.Schema({
   telefono: { type: String },
   password: { type: String, required: true },
   isAdmin: { type: Boolean, default: false },
+  eventos: { type: String, required: false }
 });
 
 module.exports = mongoose.model('Usuario', UsuarioSchema);
