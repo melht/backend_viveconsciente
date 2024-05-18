@@ -22,6 +22,11 @@ const getEventos = asyncHandler ( async (req, res) => {
     res.status(200).json(eventos)
 })
 
+const getEventobyId = asyncHandler ( async (req, res) => {
+    const evento = await Evento.findById(req.params.id)
+    res.status(200).json(evento)
+})
+
 // ACTUALIZAR EVENTO
 const updateEvento = asyncHandler ( async (req, res) => {
     const evento = await Evento.findById(req.params.id)
@@ -54,5 +59,6 @@ module.exports = {
     createEvento,
     getEventos,
     updateEvento,
-    deleteEvento
+    deleteEvento,
+    getEventobyId
 }
